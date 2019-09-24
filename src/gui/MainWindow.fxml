@@ -42,10 +42,10 @@
                   <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button fx:id="startButton" maxWidth="130.0" minWidth="130.0" mnemonicParsing="false" onAction="#handleButtonAction" prefWidth="130.0" text="Uruchom" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+                  <Button fx:id="startButton" maxWidth="130.0" minWidth="130.0" mnemonicParsing="false" onAction="#handleButtonAction" prefWidth="130.0" text="Start" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
                   <Label text="MENU" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-                  <Button fx:id="diagnoseButton" maxWidth="130.0" minWidth="130.0" mnemonicParsing="false" onAction="#handleButtonAction" prefWidth="130.0" text="Diagnozuj" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
-                  <Button fx:id="breakButton" maxWidth="130.0" minWidth="130.0" mnemonicParsing="false" onAction="#handleButtonAction" prefWidth="130.0" text="Przerwa" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER" />
+                  <Button fx:id="diagnoseButton" maxWidth="130.0" minWidth="130.0" mnemonicParsing="false" onAction="#handleButtonAction" prefWidth="130.0" text="Diagnose" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
+                  <Button fx:id="breakButton" maxWidth="130.0" minWidth="130.0" mnemonicParsing="false" onAction="#handleButtonAction" prefWidth="130.0" text="Break" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER" />
                   <ChoiceBox fx:id="graphChoiceBox" prefWidth="150.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
                   <Button fx:id="stopButton" maxWidth="130.0" minWidth="130.0" mnemonicParsing="false" onAction="#handleButtonAction" prefWidth="130.0" text="Stop" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER" />
                   <Pane prefHeight="370.0" prefWidth="10.0" style="-fx-background-color: #9099A2;" GridPane.columnIndex="1" GridPane.rowIndex="9" />
@@ -59,10 +59,10 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Button fx:id="syndromeButton" maxWidth="130.0" minWidth="130.0" mnemonicParsing="false" onAction="#handleButtonAction" prefWidth="130.0" text="Wzorzec syndromu" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                        <Button fx:id="syndromeButton" maxWidth="130.0" minWidth="130.0" mnemonicParsing="false" onAction="#handleButtonAction" prefWidth="130.0" text="Syndrome pattern" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
                      </children>
                   </GridPane>
-                  <Button fx:id="checkButton" maxWidth="130.0" minWidth="130.0" mnemonicParsing="false" onAction="#handleButtonAction" prefWidth="130.0" text="Sprawdź" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="12" GridPane.valignment="CENTER" />
+                  <Button fx:id="checkButton" maxWidth="130.0" minWidth="130.0" mnemonicParsing="false" onAction="#handleButtonAction" prefWidth="130.0" text="Check" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="12" GridPane.valignment="CENTER" />
                   <TextField fx:id="mField" maxWidth="75.0" minWidth="75.0" prefHeight="25.0" prefWidth="75.0" text="1" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="10" />
                   <Label text="          m=" GridPane.columnIndex="1" GridPane.rowIndex="10" />
                </children>
@@ -97,8 +97,8 @@
                     </rowConstraints>
                      <children>
                         <TextField fx:id="sensorField" maxWidth="130.0" minWidth="130.0" prefWidth="130.0" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-                        <Button fx:id="breakSensorButton" maxWidth="130.0" minWidth="130.0" mnemonicParsing="false" onAction="#handleButtonAction" prefWidth="130.0" text="Uszkodź" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-                        <Button fx:id="fixSensorButton" maxWidth="130.0" minWidth="130.0" mnemonicParsing="false" onAction="#handleButtonAction" prefWidth="130.0" text="Napraw" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                        <Button fx:id="breakSensorButton" maxWidth="130.0" minWidth="130.0" mnemonicParsing="false" onAction="#handleButtonAction" prefWidth="130.0" text="Damage" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                        <Button fx:id="fixSensorButton" maxWidth="130.0" minWidth="130.0" mnemonicParsing="false" onAction="#handleButtonAction" prefWidth="130.0" text="Fix" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
                      </children>
                   </GridPane>
                </children>

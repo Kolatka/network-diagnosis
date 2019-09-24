@@ -145,7 +145,7 @@ public class SensorManager {
 		for(int i=0;i<getLabelSize();i++){
 			s+= syndrome[i] + " ";
 		}
-		System.out.println("Syndrom: ");
+		System.out.println("Syndrome: ");
 		System.out.println(s);
 	}
 	

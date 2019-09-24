@@ -188,7 +188,7 @@ public class Sensor implements Runnable{
 		while(run){
 			if(state.equals("work")){
 				clearSyndrome();
-				System.out.println("Sensor " + id + " pracuje " + time + " sekund.");
+				System.out.println("Sensor " + id + " is working for " + time + " s.");
 				sleep(1000);
 				time++;
 			}

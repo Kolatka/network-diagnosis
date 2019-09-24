@@ -49,7 +49,7 @@ import javafx.stage.WindowEvent;
 import scala.util.grammar.EmptyHedgeRHS;
 
 /**
- * @author £ukasz Ko³aciñski
+ * @author ï¿½ukasz Koï¿½aciï¿½ski
  *
  */
 public class MainWindowController implements Initializable {
@@ -144,7 +144,7 @@ public class MainWindowController implements Initializable {
 		stage = (Stage) mainPane.getScene().getWindow();
 	    Parent root;
 		if(event.getSource()==startButton){   
-			log("Rozpoczêto prace sensorów");
+			log("WORK");
 			if(!running){
 				sensorManager.runSensors(); 
 				running=true;
@@ -157,7 +157,7 @@ public class MainWindowController implements Initializable {
 			
 			
 	    }else if(event.getSource()==diagnoseButton){
-	    	log("Rozpoczêto diagnoze sensorów");
+	    	log("DIAGNOSE");
 	    	sensorManager.diagnosis();
 	    	sensorManager.joinAllSensorsSyndromes();
 	    	sensorManager.printSyndrome();
@@ -165,18 +165,18 @@ public class MainWindowController implements Initializable {
 	    	mmModel = new MmModel(graphManager,sensorManager);
 	    	
 
-	    	awc.showStage(mmModel.findBrokenSensors(sensorManager.getSyndrome()),"Wynik");
+	    	awc.showStage(mmModel.findBrokenSensors(sensorManager.getSyndrome()),"RESULT");
 	    	startButton.setDisable(false);
 			breakButton.setDisable(false);
 	    }else if(event.getSource()==breakButton){
-	    	log("Rozpoczêto przerwê sensorów");
+	    	log("BREAK");
 	    	sensorManager.sleep();
 	    	
 	    	startButton.setDisable(false);
 			diagnoseButton.setDisable(false);
 			breakButton.setDisable(true);
 	    }else if(event.getSource()==stopButton){
-	    	log("Zakoñczono pracê sensorów");
+	    	log("WORK IS DONE");
 	    	sensorManager.stopSensors();
 	    	running=false;
 	    	
@@ -185,7 +185,7 @@ public class MainWindowController implements Initializable {
 	    	diagnoseButton.setDisable(true);
 			breakButton.setDisable(true);
 	    }else if(event.getSource()==syndromeButton){
-	    	log("Rozpoczêto generowanie wzorca syndromu");
+	    	log("GENERATING SYNDROME PATTERN");
 	    	
 	    	mmModel = new MmModel(graphManager,sensorManager);
 	    	int m = Integer.parseInt(mField.getText());
@@ -193,25 +193,25 @@ public class MainWindowController implements Initializable {
 			mmModel.generatePatternSyndrome(m);
 
     		if(mmModel.getRows()<700)
-    			swc.showStage(mmModel.getSyndromeString(),"Syndrom globalny dla m = " + m + ".");
-    		else swc.showStage("Zbyt du¿o danych ¿eby wyœwietliæ","Syndrom globalny dla " + m + " popsutych sensorów");
+    			swc.showStage(mmModel.getSyndromeString(),"Glboal syndrome for m = " + m + ".");
+    		else swc.showStage("Too big data to display","Global syndrome for " + m + " faulty sensors");
     		
-	    	log("Zakoñczono generowanie wzorca syndromu");
+	    	log("GENERATING COMPLETED");
 	    }else if(event.getSource()==checkButton){
 	    	mmModel = new MmModel(graphManager,sensorManager);
 	    	int m = getFieldValue(mField);
 	    	if (m>=1 && m<=5){
-	    		log("Rozpoczêto sprawdzanie " + m + "-diagnozowalnoœci");
+	    		log("Started checking of " + m + "-diagnosable");
 	    		mmModel.generatePatternSyndrome(m);
 	    		if(mmModel.checkDiagnosisLevel()){
-	    			log("Sieæ jest " + m +"-diagnozowalna");
-	    			awc.showStage("Sieæ JEST " + m +"-diagnozowalna","Wynik");
+	    			log("Network is " + m +"-diagnosable");
+	    			awc.showStage("Network is " + m +"-diagnosable","Result");
 	    		}
 	    		else{
-	    			log("Sieæ nie jest " + m +"-diagnozowalna");
-	    			awc.showStage("Sieæ NIE JEST " + m +"-diagnozowalna","Wynik");
+	    			log("Network is NOT " + m +"-diagnosable");
+	    			awc.showStage("Network is NOT" + m +"-diagnosable","Result");
 	    		}
-	    	}else log("Niepoprawna wartoœæ liczby m. Podaj wartoœæ z przedzia³u <1,5>");
+	    	}else log("Wrong m. Enter value from range: <1,5>");
 	    	
 	    	
 	    	
@@ -219,16 +219,16 @@ public class MainWindowController implements Initializable {
 	    	int id = getFieldValue(sensorField);
 	    	if(id!=-1){
 	    		sensorManager.fixSensor(id);
-	    		log("Naprawiono sensor: " + id);
+	    		log("Fixed sensor: " + id);
 	    		sensorField.setText("");
-	    	}else  log("Niepoprawna wartoœæ id sensora. Podaj wartoœæ z przedzia³u <1," + sensorManager.getSensors().size() +">");
+	    	}else  log("Wrong id. Enter value from range: <1," + sensorManager.getSensors().size() +">");
 	    }else if(event.getSource()==breakSensorButton){
 	    	int id = getFieldValue(sensorField);
 	    	if(id!=-1){
 	    		sensorManager.breakSensor(id);
-	    		log("Popsuto sensor: " + id);
+	    		log("Damaged sensor: " + id);
 	    		sensorField.setText("");
-	    	}else log("Niepoprawna wartoœæ id sensora. Podaj wartoœæ z przedzia³u <1," + sensorManager.getSensors().size() +">");
+	    	}else log("Wrong id. Enter value from range: <1," + sensorManager.getSensors().size() +">");
 	    }
 	}
 	
